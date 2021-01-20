@@ -40,13 +40,22 @@ export class App extends Component {
     }
     fetch("http://localhost:3001/login", headers)
     .then(response => response.json())
-    .then(console.log)
+    .then(userJSON => {
+      if (userJSON.error) {
+        alert("invalid credentials")
+      } else {
+        this.setState({
+          currentUser: userJSON
+        })
+      }
+    })
     .catch(console.log)
   }
   
 
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         Welcome User
