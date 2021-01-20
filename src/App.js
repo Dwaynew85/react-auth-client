@@ -28,7 +28,7 @@ export class App extends Component {
 
   handleLoginFormSubmit = event => {
     event.preventDefault()
-    const userInfo = this.state.LoginForm
+    const userInfo = this.state.loginForm
     const headers = {
       method: 'POST',
       headers: {
@@ -52,7 +52,7 @@ export class App extends Component {
         Welcome User
         <Login
           handleLoginFormChange={this.handleLoginFormChange}
-          handleLoginFormSubmit={this.componentDidCatchhandleLoginFormSubmit}  
+          handleLoginFormSubmit={this.handleLoginFormSubmit}  
           email={this.state.loginForm.email}
           password={this.state.loginForm.password}
         />
